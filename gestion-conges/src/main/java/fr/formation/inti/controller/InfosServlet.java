@@ -14,19 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 public class InfosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public InfosServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
 		out.println("<hr>ServerName : "+request.getServerName());
 		out.println("<hr>Method : "+request.getMethod());
@@ -37,13 +29,10 @@ public class InfosServlet extends HttpServlet {
 		out.println("<hr>ServletContext : "+request.getServletContext());
 		out.println("<hr>LocalAddr : "+request.getLocalAddr());
 		out.println("<hr>QueryString : "+request.getQueryString());
+		out.println("<hr>SALUT, C'EST COOL");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
