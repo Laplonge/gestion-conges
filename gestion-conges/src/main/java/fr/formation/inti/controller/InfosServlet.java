@@ -47,4 +47,5 @@ public class InfosServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
+	// ceci est un test
 }
