@@ -36,5 +36,5 @@ public class InfosServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
-	// ceci est un test prout prout 2
+	// ceci est un test prout prout 3
 }
