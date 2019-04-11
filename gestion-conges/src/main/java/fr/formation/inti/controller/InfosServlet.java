@@ -37,4 +37,5 @@ public class InfosServlet extends HttpServlet {
 	}
 
 	// ceci est un test prout prout 3
+	//j'essaie de faire une branche
 }
