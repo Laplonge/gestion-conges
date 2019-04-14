@@ -21,7 +21,6 @@
 		</repository>
 	</repositories>
 
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -56,7 +55,6 @@
 			<version>1.2.17</version>
 		</dependency>
 
-
 		<!-- Hibernate -->
 		<!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
@@ -66,15 +64,12 @@
 		</dependency>
 		<!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 
-
-
 		<!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-c3p0</artifactId>
 			<version>5.2.11.Final</version>
 		</dependency>
-
 
 		<!-- MySQL JDBC driver -->
 		<!-- http://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -90,7 +85,6 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-
 
 		<dependency>
 			<groupId>commons-logging</groupId>
