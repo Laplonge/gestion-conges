@@ -1,4 +1,4 @@
-package fr.formation.inti.DAO;
+package fr.formation.inti.utils;
 
 import java.util.List;
 
