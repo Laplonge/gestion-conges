@@ -19,3 +19,38 @@
 14 avr. 2019 20:52:42,407 {main} DEBUG fr.formation.inti.controller.TestController  - ==== getting all employees
 14 avr. 2019 20:55:27,652 {main} DEBUG fr.formation.inti.controller.TestController  - ==== getting all employees
 14 avr. 2019 20:56:00,531 {main} DEBUG fr.formation.inti.controller.TestController  - ==== getting all employees
+14 avr. 2019 22:34:10,846 {main} DEBUG fr.formation.inti.controller.TestController  - ==== getting all employees
+14 avr. 2019 22:36:36,841 {main} DEBUG fr.formation.inti.controller.TestController  - ==== getting all employees ==================
+14 avr. 2019 22:36:37,069 {main} DEBUG fr.formation.inti.controller.TestController  - ==== finding employe with id = 1 =======
+14 avr. 2019 22:36:37,073 {main} DEBUG fr.formation.inti.DAO.EmployeDao  - finding Employe instance with id: 1
+14 avr. 2019 22:36:37,074 {main} ERROR fr.formation.inti.DAO.EmployeDao  - findById failed
+java.lang.NullPointerException
+	at fr.formation.inti.DAO.EmployeDao.findById(EmployeDao.java:65)
+	at fr.formation.inti.controller.TestController.main(TestController.java:40)
+14 avr. 2019 22:53:03,847 {main} DEBUG fr.formation.inti.controller.TestController  - ==== getting all employees ==================
+14 avr. 2019 22:53:04,051 {main} DEBUG fr.formation.inti.controller.TestController  - ==== finding employe with id = 1 =======
+14 avr. 2019 22:53:04,058 {main} DEBUG fr.formation.inti.controller.TestController  - Employe [idEmploye=1, prenom=Jean, nom=Bonbeurre, grade=employe]
+14 avr. 2019 23:07:41,078 {main} INFO  fr.formation.inti.DAO.EmployeDao  - ==== getting all employees ==================
+14 avr. 2019 23:07:41,298 {main} INFO  fr.formation.inti.DAO.EmployeDao  - ==== finding employe with id = 1 =======
+14 avr. 2019 23:07:41,313 {main} DEBUG fr.formation.inti.controller.TestController  - Employe [idEmploye=1, prenom=Jean, nom=Bonbeurre, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=1, prenom=Jean, nom=Bonbeurre, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=2, prenom=Harry, nom=Covert, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=3, prenom=Gerard, nom=Menvusa, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=4, prenom=Remy, nom=Manu, grade=boss]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=5, prenom=Alain, nom=Terrieur, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=6, prenom=Jeremy, nom=Delessencedanslavoiture, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=7, prenom=Henry, nom=Tournelle, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=8, prenom=Denis, nom=Chon, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=9, prenom=Larry, nom=Bambelle, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=10, prenom=Adrienne, nom=Kepoura, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=11, prenom=Alain, nom=Proviste, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=12, prenom=Alex, nom=Terrieur, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=13, prenom=Ali, nom=Gator, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=14, prenom=Eva, nom=Zion, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=15, prenom=Guy, nom=Yiottine, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=16, prenom=Jacques, nom=Ouzi, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=17, prenom=Julien, nom=Ternette, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=18, prenom=Lara, nom=Tatouille, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=19, prenom=Anne, nom=Atomie, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=20, prenom=Maude, nom=Erateur, grade=employe]
+15 avr. 2019 10:44:26,673 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=21, prenom=Nordine, nom=Ateur, grade=employe]

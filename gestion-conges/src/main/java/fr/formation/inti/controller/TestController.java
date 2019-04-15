@@ -2,39 +2,39 @@ package fr.formation.inti.controller;
 
 import java.util.List;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import fr.formation.inti.entities.Employe;
-import fr.formation.inti.utils.HibernateUtils;
+import fr.formation.inti.service.IEmployeService;
 
 public class TestController {
 	private static final Log log = LogFactory.getLog(TestController.class);
 
 	public static void main(String[] args) {
 		
-		SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
-
-		Session session = sessionFactory.openSession();
-
-		CriteriaBuilder cb = session.getCriteriaBuilder();
-
-		log.debug("==== getting all employees");
-		CriteriaQuery<Employe> criteriaQuery = cb.createQuery(Employe.class);
-		Root<Employe> employeRoot = criteriaQuery.from(Employe.class);
-		List<Employe> results = session.createQuery(criteriaQuery).getResultList();
-				
-		for (Employe emp : results) {
-			System.out.println(emp);
-		}
+	ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+	
+	IEmployeService es = (IEmployeService) context.getBean("employeService");
+	
+	List<Employe> allEmps = es.getAll();
+	
+	for (Employe emp : allEmps) {
+		log.info(emp);
+	}
+	
+//		EmployeDao edao = new EmployeDao();
+//		for (Employe emp : edao.getAll()) {
+//			System.out.println(emp);
+//		}
+//		Integer id = 1;
+//		log.debug(edao.findById(id));
+//		Employe emp = new Employe();
+//		emp.setPrenom("Marc");
+//		emp.setNom("Heurindélébil");
 		
 		System.exit(0);
 	}
-
 }

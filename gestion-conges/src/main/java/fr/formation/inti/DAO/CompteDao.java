@@ -1,26 +1,19 @@
 package fr.formation.inti.DAO;
 // Generated 14 avr. 2019 19:56:00 by Hibernate Tools 5.1.10.Final
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import fr.formation.inti.entities.Compte;
 
-/**
- * Home object for domain model class Compte.
- * @see fr.formation.inti.DAO.Compte
- * @author Hibernate Tools
- */
-@Stateless
+//@Repository("compteDao")
 public class CompteDao {
 
 	private static final Log log = LogFactory.getLog(CompteDao.class);
 
-	@PersistenceContext
+//	@PersistenceContext
 	private EntityManager entityManager;
 
 	public void persist(Compte transientInstance) {

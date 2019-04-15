@@ -1,26 +1,19 @@
 package fr.formation.inti.DAO;
 // Generated 14 avr. 2019 19:56:00 by Hibernate Tools 5.1.10.Final
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import fr.formation.inti.entities.Conge;
 
-/**
- * Home object for domain model class Conge.
- * @see fr.formation.inti.DAO.Conge
- * @author Hibernate Tools
- */
-@Stateless
+//@Repository("congeDao")
 public class CongeDao {
 
 	private static final Log log = LogFactory.getLog(CongeDao.class);
 
-	@PersistenceContext
+//	@PersistenceContext
 	private EntityManager entityManager;
 
 	public void persist(Conge transientInstance) {

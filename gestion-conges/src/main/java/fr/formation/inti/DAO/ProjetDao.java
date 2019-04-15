@@ -1,26 +1,19 @@
 package fr.formation.inti.DAO;
 // Generated 14 avr. 2019 19:56:00 by Hibernate Tools 5.1.10.Final
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import fr.formation.inti.entities.Projet;
 
-/**
- * Home object for domain model class Projet.
- * @see fr.formation.inti.DAO.Projet
- * @author Hibernate Tools
- */
-@Stateless
+//@Repository("projetDao")
 public class ProjetDao {
 
 	private static final Log log = LogFactory.getLog(ProjetDao.class);
 
-	@PersistenceContext
+//	@PersistenceContext
 	private EntityManager entityManager;
 
 	public void persist(Projet transientInstance) {
