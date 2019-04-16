@@ -48,7 +48,6 @@ public class Employe implements java.io.Serializable {
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-
 	@Column(name = "ID_EMPLOYE", unique = true, nullable = false)
 	public Integer getIdEmploye() {
 		return this.idEmploye;
