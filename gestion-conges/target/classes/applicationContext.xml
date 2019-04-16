@@ -17,8 +17,6 @@
 
 	<tx:annotation-driven proxy-target-class="true" />
 
-	<bean id="mploye" class="fr.formation.inti.entities.Employe" />
-
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName"

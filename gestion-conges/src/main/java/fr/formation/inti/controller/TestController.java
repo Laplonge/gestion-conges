@@ -36,14 +36,8 @@ public class TestController {
 		log.info("--------------------------------------");
 		log.info(es.findById(1));
 		
-//		getTypeParameterClass();
 		
 		
 		System.exit(0);
 	}
-//	public static Class<Employe> getTypeParameterClass(){
-//        Type type = getClass().getGenericSuperclass();
-//        ParameterizedType paramType = (ParameterizedType) type;
-//        return (Class<Employe>) paramType.getActualTypeArguments()[0];
-//    }
 }

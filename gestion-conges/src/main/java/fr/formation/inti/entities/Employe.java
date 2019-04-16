@@ -3,10 +3,16 @@ package fr.formation.inti.entities;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,9 +27,14 @@ public class Employe implements java.io.Serializable {
 	private String adresseMail;
 	private String numeroTelephone;
 	private String urlPhoto;
+//	voir commentaire à la fin
 //	private Set<Conge> conges = new HashSet<Conge>(0);
 //	private Compte compte = new Compte();
+	
+	private Employe manager;
+	private Set<Employe> subordones = new HashSet<Employe>();
 
+	
 	public Employe() {
 	}
 
@@ -111,13 +122,30 @@ public class Employe implements java.io.Serializable {
 		this.urlPhoto = urlPhoto;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="id_manager")
+	public Employe getManager() {
+		return this.manager;
+	}
+	public void setManager(Employe manager) {
+		this.manager = manager;
+	}	
+	@OneToMany(mappedBy="manager")
+	public Set<Employe> getSubordones() {
+		return subordones;
+	}
+	public void setSubordones(Set<Employe> subordones) {
+		this.subordones = subordones;
+	}
+	
 	@Override
 	public String toString() {
-		return "Employe [idEmploye=" + idEmploye + ", prenom=" + prenom + ", nom=" + nom + ", grade=" + grade + "]";
+		return "Employe [idEmploye=" + idEmploye + ", prenom=" + prenom + ", nom=" + nom + ", grade=" + grade + ", manager=" + manager.getNom() + "]";
 	}
 
 //	TODO
 //	méthodes générées par défaut pour les entities congé et compte, mais ça fait planter.
+//	pas sur qu'on en ait besoin mais dans le doute je les laisse là
 //	@OneToMany(fetch = FetchType.LAZY, mappedBy = "employe")
 //	public Set<Conge> getConges() {
 //		return this.conges;
