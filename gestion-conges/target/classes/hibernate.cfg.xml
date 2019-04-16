@@ -1,19 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+    "classpath://org/hibernate/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.password">123456</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tousenvacancesbd</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.current_session_context_class">thread</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
         <property name="hibernate.search.autoregister_listeners">true</property>
-        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.validator.apply_to_ddl">false</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		
         <mapping class="fr.formation.inti.entities.Compte"/>
-        <mapping class="fr.formation.inti.entities.Conge"/>
         <mapping class="fr.formation.inti.entities.Employe"/>
         <mapping class="fr.formation.inti.entities.Projet"/>
+        <mapping class="fr.formation.inti.entities.Conge"/>
     </session-factory>
 </hibernate-configuration>
