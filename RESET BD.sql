@@ -44,8 +44,6 @@ CREATE UNIQUE INDEX `ID_EMPLOYE_UNIQUE` ON `TousEnVacancesBD`.`EMPLOYE` (`ID_EMP
 
 CREATE INDEX `fk_EMPLOYE_MANAGER_idx` ON `TousEnVacancesBD`.`EMPLOYE` (`ID_MANAGER` ASC) ;
 
-CREATE INDEX `fk_EMPLOYE_MANAGER` ON `TousEnVacancesBD`.`EMPLOYE` (`ID_MANAGER` ASC) ;
-
 
 -- -----------------------------------------------------
 -- Table `TousEnVacancesBD`.`COMPTE`
@@ -69,9 +67,6 @@ ENGINE = InnoDB;
 CREATE INDEX `fk_COMPTE_EMPLOYE` ON `TousEnVacancesBD`.`COMPTE` (`ID_EMPLOYE` ASC) ;
 
 CREATE UNIQUE INDEX `ID_COMPTE_UNIQUE` ON `TousEnVacancesBD`.`COMPTE` (`ID_COMPTE` ASC) ;
-
-CREATE INDEX `fk_COMPTES_EMPLOYE` ON `TousEnVacancesBD`.`COMPTE` (`ID_EMPLOYE` ASC) ;
-
 
 -- -----------------------------------------------------
 -- Table `TousEnVacancesBD`.`CONGE`
@@ -148,27 +143,28 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- ----------------------REMPLISSAGE DE LA TABLE EMPLOYE-------------------------------------------------------------------
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('jean.bonbeurre@mail.com','Bonbeurre','Jean');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('harry.covert@mail.fr','Covert','Harry');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('gerard.menvusa@mail.com','Menvusa','Gerard');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,GRADE)VALUES('remy-manu@mail.com','Manu','Remy','boss');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('alain.terrieur@mail.fr','Terrieur','Alain');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('jermy.delessencedanslavoiture@prout.lol','Delessencedanslavoiture','Jeremy');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('henry.tournelle@wololo.com','Tournelle','Henry');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('denis.chon@hohohoho.lol','Chon','Denis');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('larry.bambelle@mdr.fr','Bambelle','Larry');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('adrienne.kepoura@email.com','Kepoura','Adrienne');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('alain.proviste@hotmail.fr','Proviste','Alain');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('alex.terrieur@gmail.com','Terrieur','Alex');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('ali.gator@yopmail.com','Gator','Ali');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('eva.zion@adresse.mail','Zion','Eva');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('guy.yiottine@machin.de','Yiottine','Guy');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('jacques.ouzi@erreur.grave','Ouzi','Jacques');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('julien.ternette@internet.com','Ternette','Julien');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('lara.tatouille@email.fr','Tatouille','Lara');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('anne.atomie@email.com','Atomie','Anne');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('maude.erateur@mail.fr','Erateur','Maude');
-INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM)VALUES('nordine.ateur@mail.fr','Ateur','Nordine');
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER,GRADE)VALUES('remy-manu@mail.com','Manu','Remy',1,'boss');
+
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('jean.bonbeurre@mail.com','Bonbeurre','Jean',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('harry.covert@mail.fr','Covert','Harry',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('gerard.menvusa@mail.com','Menvusa','Gerard',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('alain.terrieur@mail.fr','Terrieur','Alain',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('jermy.delessencedanslavoiture@prout.lol','Delessencedanslavoiture','Jeremy',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('henry.tournelle@wololo.com','Tournelle','Henry',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('denis.chon@hohohoho.lol','Chon','Denis',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('larry.bambelle@mdr.fr','Bambelle','Larry',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('adrienne.kepoura@email.com','Kepoura','Adrienne',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('alain.proviste@hotmail.fr','Proviste','Alain',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('alex.terrieur@gmail.com','Terrieur','Alex',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('ali.gator@yopmail.com','Gator','Ali',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('eva.zion@adresse.mail','Zion','Eva',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('guy.yiottine@machin.de','Yiottine','Guy',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('jacques.ouzi@erreur.grave','Ouzi','Jacques',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('julien.ternette@internet.com','Ternette','Julien',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('lara.tatouille@email.fr','Tatouille','Lara',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('anne.atomie@email.com','Atomie','Anne',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('maude.erateur@mail.fr','Erateur','Maude',1);
+INSERT INTO tousenvacancesbd.employe (ADRESSE_MAIL,NOM,PRENOM,ID_MANAGER)VALUES('nordine.ateur@mail.fr','Ateur','Nordine',1);
 
 
 -- ---------------------------REMPLISSAGE DE LA TABLE COMPTE-------------------------------------------
