@@ -15,10 +15,6 @@ import fr.formation.inti.entities.Employe;
 import fr.formation.inti.service.interfaces.ICongeService;
 import fr.formation.inti.service.interfaces.IEmployeService;
 
-
-
-
-
 public class TestConflit {
 	private static final Log log = LogFactory.getLog(TestConflit.class);
 
