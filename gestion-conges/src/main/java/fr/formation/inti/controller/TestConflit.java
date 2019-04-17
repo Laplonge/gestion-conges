@@ -2,6 +2,9 @@ package fr.formation.inti.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -39,41 +42,51 @@ public class TestConflit {
 					+ ", Date de fin: " + Cong.getDateFin() + ", Date de demande: " + Cong.getDateDemande());
 		}
 		SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
-		java.util.Date date = dateformat.parse("2019-06-19");
+		java.util.Date date = dateformat.parse("2019-04-17");
 		java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
 
-		date = dateformat.parse("2019-06-28");
+		date = dateformat.parse("2019-04-22");
 		java.sql.Date sqlFinDate = new java.sql.Date(date.getTime());
 
 		Date current = new Date();
 
 		java.sql.Date sqlcurrent = new java.sql.Date(current.getTime());
-
-		log.info(sqlcurrent);
-
-		for (Conge cong : allCong) {
-
-			//check if resquest is old or not
-			if (!(cong.getDateDebut().before(sqlcurrent)) && cong.getStatutDeLaDemande().equals("en cours")) {
-
-				log.info(cong.getDateDebut() + " " + cong.getDateFin());
-				// check if employee holidays is okay with the database
-				if ((sqlStartDate.after(cong.getDateDebut()) && sqlStartDate.before(cong.getDateFin()))
-						|| (sqlFinDate.after(cong.getDateDebut()) && sqlFinDate.before(cong.getDateFin()))
-						|| (sqlStartDate.equals(cong.getDateDebut()) || sqlFinDate.equals(cong.getDateFin()))) {
-					log.info("Demande refusé");
-					return;
-				}
-				// check if database is okay with the employee holidays
-				if ((cong.getDateDebut().after(sqlStartDate) && cong.getDateDebut().before(sqlFinDate))
-						|| (cong.getDateFin().after(sqlStartDate) && cong.getDateFin().before(sqlFinDate))) {
-					log.info("Demande refusé_2");
-					return;
-				} else {
-					log.info("Demande acceptée");
-				}
+		// Calcul le nombre de jour de vacances
+		// Test si weekend ou pas
+		int jourdevac = 0;
+		for (LocalDate datetest = sqlStartDate.toLocalDate(); datetest
+				.isBefore(sqlFinDate.toLocalDate().plusDays(1)); datetest = datetest.plusDays(1)) {
+			log.info(datetest.getDayOfWeek());
+			if (datetest.getDayOfWeek() == DayOfWeek.SATURDAY || datetest.getDayOfWeek() == DayOfWeek.SUNDAY) {
+				log.info("C'est le weekend");
+			} else {
+				jourdevac++;
+				log.info("C'est pas le weekend :(");
 			}
 		}
+//		for (Conge cong : allCong) {
+//
+//			//check if resquest is old or not
+//			if (!(cong.getDateDebut().before(sqlcurrent)) && cong.getStatutDeLaDemande().equals("en cours")) {
+//
+//				log.info(cong.getDateDebut() + " " + cong.getDateFin());
+//				// check if employee holidays is okay with the database
+//				if ((sqlStartDate.after(cong.getDateDebut()) && sqlStartDate.before(cong.getDateFin()))
+//						|| (sqlFinDate.after(cong.getDateDebut()) && sqlFinDate.before(cong.getDateFin()))
+//						|| (sqlStartDate.equals(cong.getDateDebut()) || sqlFinDate.equals(cong.getDateFin()))) {
+//					log.info("Demande refusé");
+//					return;
+//				}
+//				// check if database is okay with the employee holidays
+//				if ((cong.getDateDebut().after(sqlStartDate) && cong.getDateDebut().before(sqlFinDate))
+//						|| (cong.getDateFin().after(sqlStartDate) && cong.getDateFin().before(sqlFinDate))) {
+//					log.info("Demande refusé_2");
+//					return;
+//				} else {
+//					log.info("Demande acceptée");
+//				}
+//			}
+//		}
 		// check si vacances disponible
 
 //		EmployeDao edao = new EmployeDao();
@@ -85,11 +98,10 @@ public class TestConflit {
 //		Employe emp = new Employe();
 //		emp.setPrenom("Marc");
 //		emp.setNom("Heurindélébil");
-		
+		log.info(jourdevac);
 		context.close();
 		System.exit(0);
 
-	// test
+		// test
 	}
 }
-
