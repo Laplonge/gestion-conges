@@ -1,19 +1,14 @@
 package fr.formation.inti.controller;
 
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import fr.formation.inti.entities.Employe;
 import fr.formation.inti.service.interfaces.IEmployeService;
-import fr.formation.inti.utils.HibernateUtils;
 
 public class TestController {
 	private static final Log log = LogFactory.getLog(TestController.class);
@@ -37,7 +32,7 @@ public class TestController {
 		log.info(es.findById(1));
 		
 		
-		
+		context.close();
 		System.exit(0);
 	}
 }

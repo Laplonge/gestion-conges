@@ -12,6 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.3.4.RELEASE</spring.version>
+		<hibernate.version>5.2.11.Final</hibernate.version>
 	</properties>
 
 	<repositories>
@@ -61,15 +62,21 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.2.11.Final</version>
+			<version>${hibernate.version}</version>
 		</dependency>
-		<!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 
 		<!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-c3p0</artifactId>
-			<version>5.2.11.Final</version>
+			<version>${hibernate.version}</version>
+		</dependency>
+		
+		<!-- hibernate entitymanager -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
 		</dependency>
 
 		<!-- MySQL JDBC driver -->
@@ -85,6 +92,12 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.2.2</version>
 		</dependency>
 
 		<dependency>
@@ -122,11 +135,20 @@
 			<version>${spring.version}</version>
 		</dependency>
 
+		<!-- spring web -->
 		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.2.2</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
+
+		<!-- spring webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
