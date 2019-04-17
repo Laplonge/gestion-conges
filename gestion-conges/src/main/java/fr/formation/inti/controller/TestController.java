@@ -32,7 +32,7 @@ public class TestController {
 		log.info(es.findById(1));
 		
 		
-		
+		context.close();
 		System.exit(0);
 	}
 }
