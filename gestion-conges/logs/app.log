@@ -729,3 +729,16 @@ java.lang.NullPointerException
 17 avr. 2019 11:45:28,359 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding fr.formation.inti.entities.Employe with id = 1
 17 avr. 2019 11:49:16,070 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding every fr.formation.inti.entities.Conge
 17 avr. 2019 11:51:33,519 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding every fr.formation.inti.entities.Conge
+17 avr. 2019 14:04:11,569 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding every fr.formation.inti.entities.Conge
+17 avr. 2019 14:06:04,799 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding every fr.formation.inti.entities.Conge
+17 avr. 2019 14:06:05,184 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding fr.formation.inti.entities.Employe with id = 1
+17 avr. 2019 14:06:05,224 {main} INFO  fr.formation.inti.controller.TestConflit  - Employe: Manu Remy, Date de Début: 2019-04-08, Date de fin: 2019-04-18, Date de demande: 2019-01-01
+17 avr. 2019 14:06:05,224 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding fr.formation.inti.entities.Employe with id = 2
+17 avr. 2019 14:06:05,261 {main} INFO  fr.formation.inti.controller.TestConflit  - Employe: Bonbeurre Jean, Date de Début: 2019-04-22, Date de fin: 2019-04-26, Date de demande: 2019-01-21
+17 avr. 2019 14:06:05,262 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding fr.formation.inti.entities.Employe with id = 3
+17 avr. 2019 14:06:05,285 {main} INFO  fr.formation.inti.controller.TestConflit  - Employe: Covert Harry, Date de Début: 2019-04-29, Date de fin: 2019-05-24, Date de demande: 2019-03-15
+17 avr. 2019 14:06:05,286 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding fr.formation.inti.entities.Employe with id = 4
+17 avr. 2019 14:06:05,307 {main} INFO  fr.formation.inti.controller.TestConflit  - Employe: Menvusa Gerard, Date de Début: 2019-06-20, Date de fin: 2019-06-27, Date de demande: 2019-04-11
+17 avr. 2019 14:06:05,309 {main} INFO  fr.formation.inti.controller.TestConflit  - 2019-04-17
+17 avr. 2019 14:06:05,309 {main} INFO  fr.formation.inti.controller.TestConflit  - 2019-06-20 2019-06-27
+17 avr. 2019 14:06:05,310 {main} INFO  fr.formation.inti.controller.TestConflit  - Demande refusé_2

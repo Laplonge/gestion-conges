@@ -55,7 +55,7 @@ public class Conge implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 
-	@Column(name = "ID_DEMANDES_TRAITEES", unique = true, nullable = false)
+	@Column(name = "ID_CONGE", unique = true, nullable = false)
 	public Integer getIdConge() {
 		return this.idConge;
 	}
