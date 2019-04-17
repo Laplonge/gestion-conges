@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 public class Conge implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Integer idDemandesTraitees;
+	private Integer idConge;
 	private Employe employe;
 	private Date dateDebut;
 	private Date dateFin;
@@ -56,12 +56,12 @@ public class Conge implements java.io.Serializable {
 	@GeneratedValue(strategy = IDENTITY)
 
 	@Column(name = "ID_DEMANDES_TRAITEES", unique = true, nullable = false)
-	public Integer getIdDemandesTraitees() {
-		return this.idDemandesTraitees;
+	public Integer getIdConge() {
+		return this.idConge;
 	}
 
-	public void setIdDemandesTraitees(Integer idDemandesTraitees) {
-		this.idDemandesTraitees = idDemandesTraitees;
+	public void setIdConge(Integer idDemandesTraitees) {
+		this.idConge = idDemandesTraitees;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)

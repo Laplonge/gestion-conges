@@ -33,7 +33,7 @@ public class TestConflit {
 		ICongeService cs = (ICongeService) context.getBean("congeService");
 		List<Conge> allCong = cs.getAll();
 		for (Conge Cong : allCong) {
-			Employe emp = es.findById(Cong.getIdDemandesTraitees());
+			Employe emp = es.findById(Cong.getIdConge());
 
 			log.info("Employe: " + emp.getNom() + " " + emp.getPrenom() + ", Date de Début: " + Cong.getDateDebut()
 					+ ", Date de fin: " + Cong.getDateFin() + ", Date de demande: " + Cong.getDateDemande());

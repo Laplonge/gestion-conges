@@ -725,3 +725,7 @@ java.lang.NullPointerException
 16 avr. 2019 17:03:19,521 {main} INFO  fr.formation.inti.controller.TestController  - --------------------------------------
 16 avr. 2019 17:03:19,521 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding fr.formation.inti.entities.Employe with id = 1
 16 avr. 2019 17:03:19,553 {main} INFO  fr.formation.inti.controller.TestController  - Employe [idEmploye=1, prenom=Remy, nom=Manu, grade=boss, manager=Manu]
+17 avr. 2019 11:45:27,931 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding every fr.formation.inti.entities.Conge
+17 avr. 2019 11:45:28,359 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding fr.formation.inti.entities.Employe with id = 1
+17 avr. 2019 11:49:16,070 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding every fr.formation.inti.entities.Conge
+17 avr. 2019 11:51:33,519 {main} INFO  fr.formation.inti.DAO.GenericHibernateDao  - Finding every fr.formation.inti.entities.Conge
