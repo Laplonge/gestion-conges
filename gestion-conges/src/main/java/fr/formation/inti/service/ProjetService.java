@@ -2,6 +2,7 @@ package fr.formation.inti.service;
 // Generated 14 avr. 2019 19:56:00 by Hibernate Tools 5.1.10.Final
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,20 +21,16 @@ public class ProjetService implements IProjetService{
 		this.pdao = pdao;
 	}
 
-	public Projet findById(Integer id) {
+	public Optional<Projet> findById(Integer id) {
 		return pdao.findById(id);
 	}
 
 	public List<Projet> getAll() {
-		return pdao.getAll();
+		return pdao.findAll();
 	}
 
 	public void save(Projet projet) {
 		pdao.save(projet);
-	}
-
-	public void update(Projet projet) {
-		pdao.update(projet);
 	}
 
 	public void delete(Projet projet) {

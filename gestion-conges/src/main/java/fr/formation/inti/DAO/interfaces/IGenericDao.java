@@ -1,22 +1,17 @@
 package fr.formation.inti.DAO.interfaces;
 
-import java.io.Serializable;
 import java.util.List;
+import java.util.Optional;
 
-public interface IGenericDao <T extends Serializable> {
+import org.springframework.data.repository.Repository;
 
-	// Persist the newInstance object into database 
-	void save(T newInstance);
-
-	// Retrieve an object that was previously persisted to the database using the indicated id as primary key
-	T findById(Integer id);    
-
-	// Retrieve all objects from to the database
-	List<T> getAll();
-
-	// Save changes made to a persistent object
-	void update(T transientObject);
-
-	// Remove an object from persistent storage in the database
-	void delete(T persistentObject);
+public interface IGenericDao<T> extends Repository<T, Integer> {
+	
+	public List<T> findAll();
+	
+	public Optional<T> findById(Integer id);
+	
+	public void delete(T t);
+	
+	public void save(T t);
 }
