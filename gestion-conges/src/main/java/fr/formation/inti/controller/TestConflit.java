@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +13,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import fr.formation.inti.entities.Conge;
-import fr.formation.inti.entities.Employe;
 import fr.formation.inti.service.interfaces.ICongeService;
 import fr.formation.inti.service.interfaces.IEmployeService;
 
@@ -26,7 +24,7 @@ public class TestConflit {
 		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		IEmployeService es = (IEmployeService) context.getBean("employeService");
-//	
+
 //	List<Employe> allEmps = es.getAll();
 //	
 //	for (Employe emp : allEmps) {
@@ -34,16 +32,14 @@ public class TestConflit {
 //	}
 
 		ICongeService cs = (ICongeService) context.getBean("congeService");
-		List<Conge> allCong = cs.getAll();
-		for (Conge Cong : allCong) {
-			Employe emp = es.findById(Cong.getIdConge());
+//		List<Conge> allCong = cs.getAll();
+//		for (Conge Cong : allCong) {
+//			Employe emp = es.findById(Cong.getIdConge());
+//
+//			log.info("Employe: " + emp.getNom() + " " + emp.getPrenom() + ", Date de Début: " + Cong.getDateDebut()
+//					+ ", Date de fin: " + Cong.getDateFin() + ", Date de demande: " + Cong.getDateDemande());
+//		}
 
-			log.info("Employe: " + emp.getNom() + " " + emp.getPrenom() + ", Date de Début: " + Cong.getDateDebut()
-					+ ", Date de fin: " + Cong.getDateFin() + ", Date de demande: " + Cong.getDateDemande());
-		}
-		
-		
-		
 		SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
 		java.util.Date date = dateformat.parse("2019-04-17");
 		java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
@@ -57,17 +53,42 @@ public class TestConflit {
 		// Calcul le nombre de jour de vacances
 		// Test si weekend ou pas
 		int jourdevac = 0;
-		for (LocalDate datetest = sqlStartDate.toLocalDate(); datetest
-				.isBefore(sqlFinDate.toLocalDate().plusDays(1)); datetest = datetest.plusDays(1)) {
-			log.info(datetest.getDayOfWeek());
-			if (datetest.getDayOfWeek() == DayOfWeek.SATURDAY || datetest.getDayOfWeek() == DayOfWeek.SUNDAY) {
-				log.info("C'est le weekend");
-			} else {
-				jourdevac++;
-				log.info("C'est pas le weekend :(");
+		List<Conge> allDate = cs.getStartDate(sqlcurrent);
+		for (Conge dates : allDate) {
+			log.info(dates.getDateDebut());
+
+			for (LocalDate datetest = ((java.sql.Date) dates.getDateDebut()).toLocalDate(); datetest.isBefore(
+					((java.sql.Date) dates.getDateFin()).toLocalDate().plusDays(1)); datetest = datetest.plusDays(1)) {
+				// log.info(datetest.getDayOfWeek());
+				if (datetest.getDayOfWeek() == DayOfWeek.SATURDAY || datetest.getDayOfWeek() == DayOfWeek.SUNDAY) {
+					// log.info("C'est le weekend");
+				} else {
+					jourdevac++;
+					// log.info("C'est pas le weekend :(");
+				}
 			}
+			if (jourdevac > dates.getEmploye().getJoursCongeRestant()) {
+				log.info("Nombre de jours insufissants demande refusée");
+
+			} else {
+				log.info("Demande acceptée");
+			}
+
+			jourdevac = 0;
 		}
-		
+
+//		int jourdevac = 0;
+//		for (LocalDate datetest = sqlStartDate.toLocalDate(); datetest
+//				.isBefore(sqlFinDate.toLocalDate().plusDays(1)); datetest = datetest.plusDays(1)) {
+//			log.info(datetest.getDayOfWeek());
+//			if (datetest.getDayOfWeek() == DayOfWeek.SATURDAY || datetest.getDayOfWeek() == DayOfWeek.SUNDAY) {
+//				log.info("C'est le weekend");
+//			} else {
+//				jourdevac++;
+//				log.info("C'est pas le weekend :(");
+//			}
+//		}
+
 //		for (Conge cong : allCong) {
 //
 //			//check if resquest is old or not
@@ -102,7 +123,7 @@ public class TestConflit {
 //		Employe emp = new Employe();
 //		emp.setPrenom("Marc");
 //		emp.setNom("Heurindélébil");
-		log.info(jourdevac);
+
 		context.close();
 		System.exit(0);
 
