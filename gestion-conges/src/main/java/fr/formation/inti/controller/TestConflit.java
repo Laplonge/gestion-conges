@@ -41,6 +41,9 @@ public class TestConflit {
 			log.info("Employe: " + emp.getNom() + " " + emp.getPrenom() + ", Date de Début: " + Cong.getDateDebut()
 					+ ", Date de fin: " + Cong.getDateFin() + ", Date de demande: " + Cong.getDateDemande());
 		}
+		
+		
+		
 		SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
 		java.util.Date date = dateformat.parse("2019-04-17");
 		java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
@@ -64,6 +67,7 @@ public class TestConflit {
 				log.info("C'est pas le weekend :(");
 			}
 		}
+		
 //		for (Conge cong : allCong) {
 //
 //			//check if resquest is old or not
