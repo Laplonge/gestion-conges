@@ -1,6 +1,7 @@
 package fr.formation.inti.service;
 // Generated 14 avr. 2019 19:56:00 by Hibernate Tools 5.1.10.Final
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,5 +36,10 @@ public class CongeService implements ICongeService{
 
 	public void delete(Conge conge) {
 		congeDao.delete(conge);
+	}
+
+	@Override
+	public List<Conge> getStartDate(Date date) {
+		return congeDao.getStartDate(date);
 	}
 }
